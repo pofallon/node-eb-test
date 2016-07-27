@@ -15,15 +15,15 @@ router.get('/', function(req, res, next) {
         });
       });
     },
-    function(cb) {
-      var t = process.hrtime();
-      req.app.get("mysql").query("select 1;", function(err, results) {
-        cb(err, {
-          step: "db",
-          time: formatTimeInMs(process.hrtime(t))
-        });
-      });
-    },
+    // function(cb) {
+    //   var t = process.hrtime();
+    //   req.app.get("mysql").query("select 1;", function(err, results) {
+    //     cb(err, {
+    //       step: "db",
+    //       time: formatTimeInMs(process.hrtime(t))
+    //     });
+    //   });
+    // },
     function(cb) {
       var t = process.hrtime();
       req.app.get("api").get(process.env.API_URL, function(err, response) {
