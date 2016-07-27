@@ -35,10 +35,11 @@ router.get('/', function(req, res, next) {
       });
     }
   ], function(err, results) {
+    res.set('Content-Type', 'text/plain');
     if (err) {
-      res.send(JSON.stringify(err, null, 4));
+      res.send(JSON.stringify(err, null, 2));
     } else {
-      res.send(JSON.stringify(results, null, 4));
+      res.send(JSON.stringify(results, null, 2));
     }
   });
 });
