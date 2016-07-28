@@ -18,8 +18,8 @@ var redisClient = redis.createClient(process.env.REDIS_URL);
 redisClient.set("hello","world");
 app.set("redis", redisClient);
 
-// var mysqlConnection = mysql.createConnection(process.env.MYSQL_URL);
-// app.set("mysql", mysqlConnection);
+var mysqlConnection = mysql.createConnection(process.env.MYSQL_URL);
+app.set("mysql", mysqlConnection);
 
 var apiClient = request.defaults({
   followRedirect: false,
